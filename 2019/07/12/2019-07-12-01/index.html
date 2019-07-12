@@ -94,13 +94,20 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="[LeetCode困难] #295 数据流的中位数题目描述：  解法一：插入排序首先想到的办法就是：每次添加数据的时候走一个插入排序，这样我的数据结构里就维护的是一个有序数列，那么取中位数的时候直接判断一下长度的奇偶然后相应返回即可。 数据结构里面可以用ArrayList或数组保存数据。我首先实现的数组的版本，考虑到数组的可扩容性，维护一个top变量和capacity变量。 12345678910">
+<meta name="keywords" content="LeetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019-07-12-01">
+<meta property="og:url" content="http://yoursite.com/2019/07/12/2019-07-12-01/index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="[LeetCode困难] #295 数据流的中位数题目描述：  解法一：插入排序首先想到的办法就是：每次添加数据的时候走一个插入排序，这样我的数据结构里就维护的是一个有序数列，那么取中位数的时候直接判断一下长度的奇偶然后相应返回即可。 数据结构里面可以用ArrayList或数组保存数据。我首先实现的数组的版本，考虑到数组的可扩容性，维护一个top变量和capacity变量。 12345678910">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/.com//problem.png">
+<meta property="og:updated_time" content="2019-07-12T08:03:35.603Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog">
+<meta name="twitter:title" content="2019-07-12-01">
+<meta name="twitter:description" content="[LeetCode困难] #295 数据流的中位数题目描述：  解法一：插入排序首先想到的办法就是：每次添加数据的时候走一个插入排序，这样我的数据结构里就维护的是一个有序数列，那么取中位数的时候直接判断一下长度的奇偶然后相应返回即可。 数据结构里面可以用ArrayList或数组保存数据。我首先实现的数组的版本，考虑到数组的可扩容性，维护一个top变量和capacity变量。 12345678910">
+<meta name="twitter:image" content="http://yoursite.com/.com//problem.png">
 
 
 
@@ -108,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/12/2019-07-12-01/">
 
 
 
@@ -118,7 +125,7 @@
   };
 </script>
 
-  <title>Blog</title>
+  <title>2019-07-12-01 | Blog</title>
   
 
 
@@ -166,8 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -205,7 +211,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -265,9 +271,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -299,10 +305,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/12/2019-07-12-01/" class="post-title-link" itemprop="url">2019-07-12-01</a>
+          <h1 class="post-title" itemprop="name headline">2019-07-12-01
+
               
             
           </h1>
@@ -381,9 +385,7 @@
       
 
       
-        
-          
-            <h1 id="LeetCode困难-295-数据流的中位数"><a href="#LeetCode困难-295-数据流的中位数" class="headerlink" title="[LeetCode困难] #295 数据流的中位数"></a>[LeetCode困难] #295 数据流的中位数</h1><p>题目描述：</p>
+        <h1 id="LeetCode困难-295-数据流的中位数"><a href="#LeetCode困难-295-数据流的中位数" class="headerlink" title="[LeetCode困难] #295 数据流的中位数"></a>[LeetCode困难] #295 数据流的中位数</h1><p>题目描述：</p>
 <p><img src="/.com//problem.png" alt="problem"></p>
 <h4 id="解法一：插入排序"><a href="#解法一：插入排序" class="headerlink" title="解法一：插入排序"></a>解法一：插入排序</h4><p>首先想到的办法就是：每次添加数据的时候走一个插入排序，这样我的数据结构里就维护的是一个有序数列，那么取中位数的时候直接判断一下长度的奇偶然后相应返回即可。</p>
 <p>数据结构里面可以用ArrayList或数组保存数据。我首先实现的数组的版本，考虑到数组的可扩容性，维护一个top变量和capacity变量。</p>
@@ -408,8 +410,6 @@
 
 <p><strong>时间复杂度：</strong> 维护堆所需要的时间是<em>O(log n)</em> ，添加数据时只需常数个堆操作。找到平均值也只需常数级复杂度。因此总体的时间复杂度应该是<em>O(log n)</em>  。上面代码在2019/07/11时打败了85.18%的Java，看了看排在前面的代码，思路也是一样的，至于中间用了什么技巧，之后再看吧，目前的主要目的是学习数据结构与算法（可能是少写一个minComparator？）</p>
 
-          
-        
       
     </div>
 
@@ -430,178 +430,39 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/11/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="caoPhoenix">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-
-    
-      <header class="post-header">
-
         
+          
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/11/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
+        <div class="post-tags">
           
+            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
           
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-11 19:05:13 / 修改时间：19:35:01" itemprop="dateCreated datePublished" datetime="2019-07-11T19:05:13+08:00">2019-07-11</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/07/11/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/11/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p><a href="https://blog.csdn.net/wangxp/article/details/81535786" target="_blank" rel="noopener">npm超时</a></p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/11/hello-world/#more" rel="contents">
-                阅读全文 &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/11/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
+            
+          </div>
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -611,14 +472,22 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -638,8 +507,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -698,6 +576,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode困难-295-数据流的中位数"><span class="nav-number">1.</span> <span class="nav-text">[LeetCode困难] #295 数据流的中位数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解法一：插入排序"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">解法一：插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解法二：两个堆"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">解法二：两个堆</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -829,6 +724,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
 
   
 
@@ -856,9 +755,28 @@
 </script>
 
 
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://yoursite.com/2019/07/12/2019-07-12-01/";
+    this.page.identifier = "2019/07/12/2019-07-12-01/";
+    this.page.title = '2019-07-12-01';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 
 
+
+
+  
 
 
   
