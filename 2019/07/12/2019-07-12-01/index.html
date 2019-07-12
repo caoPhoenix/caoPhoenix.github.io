@@ -102,12 +102,12 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="记录一些做题过程中碰到的巧妙解法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://caophoenix.github.io/2019/07/12/2019-07-12-01/2019-07-12-01/problem.png">
-<meta property="og:updated_time" content="2019-07-12T08:57:09.762Z">
+<meta property="og:image" content="https://caophoenix.github.io/2019/07/12/2019-07-12-01/problem.png">
+<meta property="og:updated_time" content="2019-07-12T09:29:44.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[LeetCode困难] 295. 数据流的中位数">
 <meta name="twitter:description" content="记录一些做题过程中碰到的巧妙解法。">
-<meta name="twitter:image" content="https://caophoenix.github.io/2019/07/12/2019-07-12-01/2019-07-12-01/problem.png">
+<meta name="twitter:image" content="https://caophoenix.github.io/2019/07/12/2019-07-12-01/problem.png">
 
 
 
@@ -331,7 +331,7 @@
                 
               
 
-              <time title="创建时间：2019-07-12 15:00:00 / 修改时间：16:57:09" itemprop="dateCreated datePublished" datetime="2019-07-12T15:00:00+08:00">2019-07-12</time>
+              <time title="创建时间：2019-07-12 15:00:00 / 修改时间：17:29:44" itemprop="dateCreated datePublished" datetime="2019-07-12T15:00:00+08:00">2019-07-12</time>
             </span>
           
 
@@ -388,7 +388,7 @@
         <p>记录一些做题过程中碰到的巧妙解法。</p>
 <a id="more"></a>  
 <p>题目描述：</p>
-<p><img src="2019-07-12-01/problem.png" alt="problem"></p>
+<p><img src="problem.png" alt="problem"></p>
 <h4 id="解法一：插入排序"><a href="#解法一：插入排序" class="headerlink" title="解法一：插入排序"></a>解法一：插入排序</h4><p>首先想到的办法就是：每次添加数据的时候走一个插入排序，这样我的数据结构里就维护的是一个有序数列，那么取中位数的时候直接判断一下长度的奇偶然后相应返回即可。</p>
 <p>数据结构里面可以用ArrayList或数组保存数据。我首先实现的数组的版本，考虑到数组的可扩容性，维护一个top变量和capacity变量。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MedianFinder</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] data;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> top;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> capacity;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MedianFinder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        capacity = <span class="number">10000</span>;</span><br><span class="line">        top = <span class="number">0</span>;</span><br><span class="line">        data = <span class="keyword">new</span> <span class="keyword">int</span>[capacity];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addNum</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(top == capacity)&#123;</span><br><span class="line">            capacity*=<span class="number">2</span>;</span><br><span class="line">            data = Arrays.copyOf(data, capacity);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> i = top-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(data[i]&lt;=num) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = top;j&gt;i+<span class="number">1</span>;j--)&#123;</span><br><span class="line">            data[j] = data[j-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        data[i+<span class="number">1</span>] = num;</span><br><span class="line">        top++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMedian</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(top%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> (data[top/<span class="number">2</span>]+data[top/<span class="number">2</span>-<span class="number">1</span>])/<span class="number">2.0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> data[top/<span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -459,10 +459,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/12/test/" rel="prev" title="test">
-                test <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -538,7 +534,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
